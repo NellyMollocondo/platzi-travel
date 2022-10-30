@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platzi Travel</title>
+    <link rel="stylesheet" href="./css/tailwind.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+<body class="font-Montserrat dark:bg-gray-900" >
+    <nav class="w-full h-auto hidden bg-white md:flex p-4 justify-between fixed z-10 dark:bg-gray-800">
+        <div class="h-auto w-auto">
+            <p class="text-xl text-primary font-black dark:text-white">Platzi Travel</p>
+        </div>
+        <div class="flex space-x-8">
+            <a class="font-bold text-md text-primary dark:text-white" href="#home">Inicio</a>
+            <a class="font-bold text-md text-primary dark:text-white" href="#recomendados">Recomendados</a>
+            <a class="font-bold text-md text-primary dark:text-white" href="#rentas_destacadas">Rentas</a>
+            <a class="font-bold text-md text-primary dark:text-white" href="#faqs">FAQS</a>
+            <a class="font-bold text-md text-primary dark:text-white" href="#sobre_nosotros">Sobre nosotros</a>
+        </div>
+        <div class="flex space-x-4 items-center">
+            <svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path class="fill-current text-primary dark:text-white" fill-rule="evenodd" clip-rule="evenodd" d="M6 1.99997C4.93913 1.99997 3.92172 2.4214 3.17157 3.17155C2.42143 3.92169 2 4.93911 2 5.99997C2 7.06084 2.42143 8.07825 3.17157 8.8284C3.92172 9.57855 4.93913 9.99997 6 9.99997C7.06087 9.99997 8.07828 9.57855 8.82843 8.8284C9.57857 8.07825 10 7.06084 10 5.99997C10 4.93911 9.57857 3.92169 8.82843 3.17155C8.07828 2.4214 7.06087 1.99997 6 1.99997ZM1.13461e-07 5.99997C-0.00012039 5.05568 0.222642 4.12468 0.650171 3.28271C1.0777 2.44074 1.69792 1.71157 2.4604 1.1545C3.22287 0.597426 4.10606 0.228185 5.03815 0.0768059C5.97023 -0.0745733 6.92488 -0.00381595 7.82446 0.283323C8.72404 0.570462 9.54315 1.06587 10.2152 1.72927C10.8872 2.39266 11.3931 3.20531 11.6919 4.10111C11.9906 4.9969 12.0737 5.95056 11.9343 6.88452C11.795 7.81848 11.4372 8.70637 10.89 9.47597L15.707 14.293C15.8892 14.4816 15.99 14.7342 15.9877 14.9964C15.9854 15.2586 15.8802 15.5094 15.6948 15.6948C15.5094 15.8802 15.2586 15.9854 14.9964 15.9876C14.7342 15.9899 14.4816 15.8891 14.293 15.707L9.477 10.891C8.57936 11.5293 7.52335 11.9081 6.42468 11.9861C5.326 12.0641 4.22707 11.8381 3.2483 11.3329C2.26953 10.8278 1.44869 10.063 0.875723 9.12232C0.30276 8.18165 -0.000214051 7.10141 1.13461e-07 5.99997Z" fill="#3F3F46"/></svg>
+            <button id="toggle">
+                <svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path class="fill-current text-primary dark:text-white" d="M15.293 11.293C13.8115 11.9631 12.161 12.1658 10.5614 11.8742C8.96175 11.5826 7.48895 10.8105 6.33919 9.66079C5.18944 8.51104 4.41734 7.03824 4.12574 5.4386C3.83415 3.83897 4.03691 2.18846 4.70701 0.70697C3.52758 1.23998 2.49505 2.05117 1.69802 3.07093C0.900987 4.09069 0.363244 5.28859 0.130924 6.56186C-0.101395 7.83512 -0.0213565 9.14574 0.364174 10.3813C0.749705 11.6168 1.42922 12.7404 2.34442 13.6556C3.25961 14.5708 4.38318 15.2503 5.61871 15.6358C6.85424 16.0213 8.16486 16.1014 9.43813 15.8691C10.7114 15.6367 11.9093 15.099 12.9291 14.302C13.9488 13.5049 14.76 12.4724 15.293 11.293Z" fill="#3F3F46"/></svg>
+            </button>
+            <svg width="20" height="20" viewBox="0 0 25 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path class="fill-current text-gray-200 dark:text-white" fill-rule="evenodd" clip-rule="evenodd" d="M2.78225 17.6464C4.4799 15.2799 7.48651 13.4999 12.4999 13.4999C17.5132 13.4999 20.5199 15.2799 22.2175 17.6464C23.8582 19.9336 24.1196 22.5552 24.1248 24.0058C24.13 25.4645 22.9071 26.4166 21.6533 26.4166H3.34642C2.09262 26.4166 0.869709 25.4645 0.874956 24.0058C0.880174 22.5552 1.1415 19.9336 2.78225 17.6464Z" fill="#F2F2F2"/><path class="fill-current text-gray-200 dark:text-white" fill-rule="evenodd" clip-rule="evenodd" d="M12.5 10.9166C15.3535 10.9166 17.6667 8.60339 17.6667 5.74992C17.6667 2.89645 15.3535 0.583252 12.5 0.583252C9.64653 0.583252 7.33334 2.89645 7.33334 5.74992C7.33334 8.60339 9.64653 10.9166 12.5 10.9166Z" fill="#F2F2F2"/></svg>
+        </div>
+    </nav>
+    <section class="w-full h-auto">
+        <div class="w-ful h-3/4" id="home">
+            <div class="w-full h-full">
+                <div class="w-full h-full flex flex-col absolute space-y-96 py-4 items-center md:space-y-0 md:items-start md:pt-48 md:justify-start">
+                    <input type="search" class="outline-none p-3 rounded-full shadow-sm transition duration-300 focus-within:shadow-sm focus:ring-2 focus:w-11/12 md:hidden" name="" id="" placeholder="San Francisco">
+                    <div class="hidden h-auto md:w-2/5 md:flex pb-6">
+                        <p class="text-2xl ml-16 font-bold text-black">Encuentra mas ubicaciones como esta</p>
+                    </div>
+                    <button class="p-4 w-48 rounded-full text-lg text-primary font-semibold bg-white transition duration-500 ease-in-out hover:bg-primary hover:text-white transform hover:-translate-y-1 hover:scale-110 md:ml-16">Explorar</button>
+                </div>
+                <div class="w-full h-full md:h-96 md:bg-sanFranciscoDesktop md:bg-cover md:bg-center">
+                    <img class="md:hidden" src="./img/sanFrancisco.jpg" alt="Imagen de San Francisco">
+                </div>
+            </div>
+        </div>
+        <div class="w-full h-auto" id="recomendados">
+            <p class="text-3xl font-semibold text-primary dark:text-white pl-6 pt-6">Nuestras recomendaciones</p>
+            <div class="w-auto h-80 items-center mt-6 p-6 flex space-x-6 overflow-x-auto overscroll-x-contain overflow-y-hidden">
+                <div class="Card">
+                    <div class="w-full h-3/5 bg-norway bg-cover rounded-t-lg"></div>
+                    <div class="w-full h-2/5 bg-secondary rounded-b-lg dark:bg-gray-700">
+                        <p class="text-white text-bold text-xl px-4 py-3">Norway</p>
+                        <p class="text-white text-sm px-4">Paisajes increibles</p>
+                    </div>
+                </div>
+                <div class="Card">
+                    <div class="w-full h-3/5 bg-new_york bg-cover rounded-t-lg"></div>
+                    <div class="w-full h-2/5 bg-terciary rounded-b-lg dark:bg-gray-800">
+                        <p class="text-tertiary text-bold text-xl px-4 py-3 dark:text-white">New York</p>
+                        <p class="text-tertiary text-sm px-4 dark:text-white">Jungla de concreto</p>
+                    </div>
+                </div>
+                <div class="Card">
+                    <div class="w-full h-3/5 bg-yosemite bg-cover rounded-t-lg"></div>
+                    <div class="w-full h-2/5 bg-secondary rounded-b-lg dark:bg-gray-700">
+                        <p class="text-white text-bold text-xl px-4 py-3">Yosemite</p>
+                        <p class="text-white text-sm px-4">Un descanso del mundo</p>
+                    </div>
+                </div>
+                <div class="Card">
+                    <div class="w-full h-3/5 bg-seattle bg-cover rounded-t-lg"></div>
+                    <div class="w-full h-2/5 bg-terciary rounded-b-lg dark:bg-gray-800">
+                        <p class="text-tertiary text-bold text-xl px-4 py-3 dark:text-white">Seattle</p>
+                        <p class="text-tertiary text-sm px-4 dark:text-white">Gran ciudad</p>
+                    </div>
+                </div>
+                <div class="Card">
+                    <div class="w-full h-3/5 bg-switzerland bg-cover rounded-t-lg"></div>
+                    <div class="w-full h-2/5 bg-secondary rounded-b-lg dark:bg-gray-700">
+                        <p class="text-white text-bold text-xl px-4 py-3 dark:text-white">Switzerland</p>
+                        <p class="text-white text-sm px-4 dark:text-white">Gran ciudad</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="px-2 h-full w-full md:px-6" id="rentas_destacadas">
+            <p class="text-3xl text-primary font-semibold pb-6 mt-6 dark:text-white">Rentas destacadas</p>
+            <div class="w-full h-full flex flex-col space-y-6 items-center justify-center">
+                <div class="w-full h-96 bg-chicago bg-cover rounded-lg md:bg-center">
+                    <p class="CardTitle text-black">Chicago</p>
+                    <p class="text-sm pl-8 text-white mr-24 md:text-lg dark:text-white">2 habitaciones, baño y cocina.</p>
+                </div>
+                <div class="w-full h-96 bg-LA bg-cover rounded-lg md:hidden">
+                    <p class="CardTitle">Los Angeles</p>
+                    <p class="text-sm pl-8 text-white mr-24 md:text-lg dark:text-white">4 habitaciones, 3 baños,  cocina y piscina privada.</p>
+                </div>
+                <div class="w-full h-96 bg-miami bg-cover rounded-lg md:hidden">
+                    <p class="CardTitle">Miami</p>
+                    <p class="text-sm pl-8 text-white mr-24 md:text-lg dark:text-white">3 habitaciones, 2 baños,  cocina y maravillosa vista al mar.</p>
+                </div>
+                <div class="w-full h-96 bg-bali bg-cover rounded-lg md:hidden">
+                    <p class="CardTitle">Bali</p>
+                    <p class="text-sm pl-8 text-white mr-24 md:text-lg dark:text-white">2 habitaciones, 2 baños, cocina y piscina privada.</p>
+                </div>
+                <div class="md:flex md:h-full hidden md:w-full md:space-x-4">
+                    <div class="w-full h-96 bg-LA bg-cover rounded-lg md:h-auto">
+                        <p class="CardTitle">Los Angeles</p>
+                        <p class="text-sm pl-8 text-white mr-24 md:text-lg">4 habitaciones, 3 baños,  cocina y piscina privada.</p>
+                    </div>
+                    <div class="h-full w-full">
+                        <div class="w-full h-96 bg-miami bg-cover rounded-lg md:mb-6">
+                            <p class="CardTitle">Miami</p>
+                            <p class="text-sm pl-8 text-white mr-24 md:text-lg">3 habitaciones, 2 baños,  cocina y maravillosa vista al mar.</p>
+                        </div>
+                        <div class="w-full h-96 bg-bali bg-cover rounded-lg">
+                            <p class="CardTitle">Bali</p>
+                            <p class="text-sm pl-8 text-white mr-24 md:text-lg">2 habitaciones, 2 baños, cocina y piscina privada.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-full h-full pb-4" id="faqs">
+            <div class="w-full h-full px-6 flex flex-col space-y-4">
+                <p class="text-3xl text-primary font-semibold mt-6 dark:text-white">FAQS</p>
+                <div class="dark:text-white">
+                    <p class="text-xl font-medium text-primary dark:text-white">Métodos de pago</p>
+                    <p class="text-base pt-2 pb-4">Aceptamos VISA, MasterCard, American Express, Paypal y Binance.</p>
+                    <p class="text-xl font-medium text-primary dark:text-white">Política de cancelación</p>
+                    <p class="text-base pt-2 pb-4">Aceptamos VISA, MasterCard, American Express, Paypal y Binance.</p>
+                    <p class="text-xl font-medium text-primary dark:text-white">Largas Estancias</p>
+                    <p class="text-base pt-2 pb-4">Aceptamos VISA, MasterCard, American Express, Paypal y Binance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="w-full h-auto bg-gray-50 p-6 space-y-2 mb-6" id="sobre_nosotros">
+        <p class="text-lg">Acerca de</p>
+        <p class="text-sm text-gray-400">Inversores</p>
+        <p class="text-sm text-gray-400">Trabajos</p>
+        <p class="text-sm text-gray-400">Política de privacidad</p>
+        <p class="text-sm text-gray-400">Términos y condiciones</p>
+        <p class="text-sm text-gray-400">Platzi Travel, Inc</p>
+        <p class="text-sm text-gray-400">Síganos</p>
+        <div class="flex">
+            <a href="#"><div class="w-5 h-5 mr-4 bg-twitter bg-contain text-gray-400"></div></a>
+            <a href="#"><div class="w-5 h-5 bg-instagram bg-contain text-gray-400"></div></a>
+        </div>
+    </footer>
+    <div class="w-full h-26 p-1 bg-white fixed left-0 bottom-0 shadow-md flex space-x-8 items-center justify-center md:hidden dark:bg-gray-800" id="tab_bar">
+        <a href="#home">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+                <path class="fill-current text-gray-400 dark:text-gray-200" d="M3.525 21.475V8.75L12 2.4l8.475 6.35v12.725H13.5v-7h-3v7Z"/>
+            </svg>
+        </a>
+        <a href="#rentas_destacadas" >
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+                <path class="fill-current text-primary" d="m19.575 21.525-6.4-6.375q-.75.525-1.712.85-.963.325-2.088.325-2.85 0-4.837-1.988Q2.55 12.35 2.55 9.5q0-2.85 1.988-4.838 1.987-1.987 4.837-1.987 2.875 0 4.85 1.987Q16.2 6.65 16.2 9.5q0 1.125-.313 2.075-.312.95-.862 1.675l6.425 6.425Zm-10.2-7.85q1.75 0 2.963-1.213Q13.55 11.25 13.55 9.5q0-1.75-1.212-2.963-1.213-1.212-2.963-1.212-1.725 0-2.95 1.212Q5.2 7.75 5.2 9.5t1.225 2.962q1.225 1.213 2.95 1.213Z"/>
+            </svg>
+        </a>
+        <a href="#recomendados">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+                <path class="fill-current text-gray-400 dark:text-gray-200" d="m11.975 21.65-1.775-1.6q-2.575-2.325-4.262-4.012Q4.25 14.35 3.275 13 2.3 11.65 1.9 10.512q-.4-1.137-.4-2.362 0-2.55 1.713-4.275Q4.925 2.15 7.475 2.15q1.3 0 2.463.5 1.162.5 2.037 1.425.9-.925 2.063-1.425 1.162-.5 2.437-.5 2.575 0 4.3 1.725Q22.5 5.6 22.5 8.15q0 1.2-.387 2.35-.388 1.15-1.375 2.487-.988 1.338-2.688 3.038-1.7 1.7-4.3 4.025Z"/>
+            </svg>
+        </a>
+        <button id="toggle-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+                <path class="fill-current text-gray-400 dark:text-gray-200" d="M12 21.2q-3.85 0-6.525-2.675Q2.8 15.85 2.8 12q0-3.825 2.675-6.525T12 2.775q.3 0 .613.012.312.013.612.063-.85.8-1.375 1.875t-.525 2.325q0 2.35 1.65 4T17 12.7q1.225 0 2.3-.525 1.075-.525 1.85-1.375.05.3.063.587.012.288.012.588 0 3.85-2.7 6.537Q15.825 21.2 12 21.2Z"/>
+            </svg>
+        </button>
+        <a href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+                <path class="fill-current text-gray-400 dark:text-gray-200" d="M12 11.75q-1.85 0-3.162-1.3-1.313-1.3-1.313-3.175 0-1.85 1.313-3.15 1.312-1.3 3.162-1.3 1.85 0 3.163 1.3 1.312 1.3 1.312 3.15 0 1.875-1.312 3.175-1.313 1.3-3.163 1.3Zm-8.475 8.975V17.4q0-.975.512-1.8.513-.825 1.363-1.25 1.575-.775 3.238-1.188Q10.3 12.75 12 12.75q1.725 0 3.388.4 1.662.4 3.212 1.2.85.425 1.363 1.237.512.813.512 1.813v3.325Z"/>
+            </svg>
+        </a>
+    </div>
+    <script>
+        const htmlElement = document.querySelector("html");
+        const toggleButton = document.getElementById("toggle");
+        const toggleButtonSm = document.getElementById("toggle-sm");
+
+        toggleButton.addEventListener('click', () => toggleDarkMode() );
+        toggleButtonSm.addEventListener('click', () => toggleDarkMode() );
+
+        const toggleDarkMode = () => {
+            htmlElement.classList.contains('dark')?
+            htmlElement.classList.remove('dark'):
+            htmlElement.classList.add('dark')
+        }
+    </script>    
+</body>
+</html>
